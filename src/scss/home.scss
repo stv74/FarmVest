@@ -1,0 +1,465 @@
+.promo {
+    &__container-outer {
+        position: relative;
+    }
+    &__content {
+        position: relative;
+        z-index: 2;
+        @include adaptiveValue("padding-top", 251, 150);
+        @include adaptiveValue("padding-bottom", 209, 50);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__title {
+        max-width: em(800, 70);
+    }
+    &__text {
+        max-width: em(575, 18);
+        line-height: 1.8;
+        text-align: center;
+        @include adaptiveValue("margin-top", 69, 49);
+    }
+    &__form {
+        @include adaptiveValue("margin-top", 48, 38);
+    }
+}
+.icons-promo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    @media (max-width:$mobile) {
+        opacity: 0.2;
+    }
+    &__circle {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        @include adaptiveValue("width", 585, 350);
+        @include adaptiveValue("height", 585, 350);
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px solid #fff;
+        }
+        &_1 {
+            &::before {
+                transform: translate(calc(-50% + rem(27)), -45%);
+            }            
+        }
+        &_2 {
+            &::before {
+                transform: translate(calc(-50% - rem(28)), -35%);
+            }            
+        }
+    }
+    &__item {
+        position: absolute;
+        &_1 {
+            top: percent(145, 983);
+            left: percent(1095, 1620);
+        }
+        &_2 {
+            top: percent(379, 983);
+            left: percent(237, 1620);
+        }
+        &_3 {
+            top: percent(410, 983);
+            left: percent(1325, 1620);
+        }
+        &_4 {
+            top: percent(367, 983);
+            right: em(15, 18);
+        }
+        &_5 {
+            top: percent(682, 983);
+            left: em(15, 18);
+        }
+        &_6 {
+            top: percent(757, 983);
+            left: percent(403, 1620);
+        }
+        &_7 {
+            top: percent(776, 983);
+            left: percent(1321, 1620);
+        }
+    }
+}
+// Partners
+.partners {
+    @include adaptiveValue("padding-bottom", 200, 50);
+    &__container-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: em(25, 18);
+        @media (max-width: em(1100)){
+            justify-content: center;              
+        }
+    }
+    &__item {
+        text-align: center;
+        img {
+            max-width: 100%;
+        }
+    }
+}
+// How It Works
+.how {
+    @include adaptiveValue("padding-bottom", 100, 25);
+    &__container-inner {
+        display: grid;
+        row-gap: em(30, 18);
+        @media (min-width:$tablet){
+            grid-template-columns: 1fr percent(750, 1420);
+            @include adaptiveValue("column-gap", 96, 26);            
+        }        
+    }
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 32, 22);
+        }
+        @media (max-width:$tablet){
+            text-align: center;
+        }
+    }
+    &__text {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 48, 36);
+        }
+        @media (max-width:$mobileSmall){
+             text-align: center; 
+        }
+    }
+}
+.steps-how {
+    display: grid;
+    @media (max-width:$mobileSmall){
+        text-align: center; 
+    }    
+    &__item { 
+        max-width: em(490, 18);
+        display: flex;
+        gap: em(32, 18);
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 50, 30);
+        }
+        @media (max-width:$tablet) {
+            justify-self: center;
+        }
+        @media (max-width:$mobileSmall){
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+        }
+    }
+    &__icon {
+        display: flex;
+        flex: 0 0 em(110, 18);
+        width: em(110, 18);
+        height: em(110, 18);
+        border-radius: 50%;
+        background: rgba(0, 128, 0, 0.1);
+        justify-content: center;
+        align-items: center;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: rem(20);
+        &:not(:last-child) {
+            margin-bottom: em(16, 20);
+        }
+    }
+}
+// Pathway
+.pathway {
+    @include adaptiveValue("padding-top", 100, 25);    
+    @include adaptiveValue("padding-bottom", 100, 25);    
+    &__container-inner {
+        display: grid;
+        row-gap: em(30, 18);
+        @media (min-width:$tablet) {
+            grid-template-columns: percent(694, 1420) 1fr;
+            @include adaptiveValue("column-gap", 126, 26);
+        }
+    }
+    &__img {
+        @media (max-width:$tablet){
+            order: 1;            
+        }
+        &.image-block {
+            @include adaptiveValue("padding-top", 56, 30);
+            @include adaptiveValue("padding-bottom", 56, 30);
+            @include adaptiveValue("padding-left", 40, 30);
+            @include adaptiveValue("padding-right", 40, 30);
+        }
+        .image-block__circle {
+            top: auto;
+            right: auto;
+            left: 0;
+            bottom: 0;
+            &_1 {
+                &::before {
+                    transform: translate(calc(-50% + em(22, 18)), percent(113, 585));
+                }
+            }
+            &_2 {
+                &::before {
+                    transform: translate(calc(-50% + em(16, 18)), percent(36, 585));
+                }
+            }
+        }
+    }
+    &__title {
+        text-align: left;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 32, 22);
+        }
+        @media (max-width:$tablet) {
+            text-align: center;
+        }
+    }
+    &__text {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 48, 36);
+        }
+        @media (max-width:$mobileSmall){
+             text-align: center; 
+        }
+    }
+}
+.spollers-pathway {
+    &__item {
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 42, 22);
+        }
+    }
+    &__title {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        @include adaptiveValue("font-size", 24, 18);
+        line-height: 177%;
+        background-color: transparent;
+        padding: 1em em(30, 24);
+        &::after {
+            content: "";
+            width: 1em;
+            height: 1em;
+            background: url("@img/icons/arrow-down.svg") center / 100% no-repeat;
+            transition: all 0.3s ease 0s;
+        }
+        &._spoller-active {
+            &::after {
+                transform: rotate(-180deg);
+            }
+        }
+        @media (max-width:$mobileSmall){
+             line-height: 1.3; 
+        }
+    }
+    &__body {
+        padding: 0 em(30, 18) em(24, 18);
+        text-align: justify;
+        @media (max-width:$mobileSmall){
+             padding: 0 em(20, 18) 1em; 
+        }
+    }
+}
+// Why
+.why {
+    @include adaptiveValue("padding-top", 100, 25);
+    @include adaptiveValue("padding-bottom", 100, 25);
+    &__container-inner {
+        display: grid;
+        row-gap: em(30, 18);
+        @media (min-width:$tablet) {
+            grid-template-columns: 1fr percent(680, 1420);
+            @include adaptiveValue("column-gap", 177, 26);
+        }
+    }
+    &__title {
+        text-align: left;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 32, 22);
+        }
+        @media (max-width:$tablet) {
+            text-align: center;
+        }
+    }
+    &__text {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 55, 36);
+        }
+        @media (max-width:$mobileSmall) {
+            text-align: center;
+        }
+    }
+    &__list {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 55, 36);
+        }
+    }   
+    &__img {
+        text-align: center;
+        img {
+            max-width: 100%;
+            border-radius: em(20, 18);
+        }
+    }
+}
+.list-why {
+    list-style: none;
+    counter-reset: list-numbers;
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: em(50, 20);
+        font-size: rem(20);
+        font-weight: 500;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 48, 36);
+        }
+        &::before {
+            counter-increment: list-numbers;
+            content: counter(list-numbers);
+            width: em(64, 36);
+            height: em(64, 36);
+            border-radius: 50%;
+            font-size: rem(36);
+            font-weight: 500;
+            text-align: center;
+            line-height: 2;
+            background: rgba(255, 255, 255, 0.05);
+        }
+    }
+}
+// Reviews
+.reviews {
+    @include adaptiveValue("padding-top", 100, 25);
+    @include adaptiveValue("padding-bottom", 100, 25);
+    &__container-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 32, 22);
+        }
+    }
+    &__text {
+        max-width: em(453, 18);
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 48, 36);
+        }
+    }
+    &__items {
+        display: flex;
+        @include adaptiveValue("gap", 48, 20, 0, 1420, 768);
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 48, 36);
+        }
+        @media (max-width:$mobileSmall){
+             flex-direction: column; 
+        }
+    }
+    &__item {
+        flex: 0 1 50%;
+    }
+}
+.item-review {
+    display: flex;
+    border-radius: em(20, 18);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    @media (max-width: $tablet) {
+        flex-direction: column;
+    }
+    &__img-ibg {
+        flex: 0 0 percent(300, 686);
+        padding-bottom: percent(377, 686);
+        @media (max-width:$tablet){
+            flex: 0 0 300px;
+        }
+    }
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: em(20, 18);
+        @include adaptiveValue("padding", 32, 16);
+    }
+    &__name {
+        font-weight: 600;
+    }
+}
+.download {
+    @include adaptiveValue("padding-top", 100, 25);
+    @include adaptiveValue("padding-bottom", 200, 50);
+    &__body {
+        @include adaptiveValue("padding-top", 72, 40);
+        @include adaptiveValue("padding-bottom", 64, 36);
+        @include adaptiveValue("padding-left", 30, 20);
+        @include adaptiveValue("padding-right", 30, 20);
+        position: relative;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.07);
+        border-radius: em(20, 18);
+    }
+    &__title {
+        max-width: em(600, 56);
+        margin: 0 auto;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 48, 36);
+        }
+    }
+    &__apps {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        @include adaptiveValue("gap", 24, 15);
+        flex-wrap: wrap;
+        z-index: 2;
+    }
+    &__circle {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        @include adaptiveValue("width", 585, 350);
+        @include adaptiveValue("height", 585, 350);
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.37);
+        }
+        &_1 {
+            &::before {
+                transform: translate(-50%, -18%);
+            }
+        }
+        &_2 {
+            &::before {
+                transform: translate(-50%, -6%);
+            }
+        }
+    }
+}

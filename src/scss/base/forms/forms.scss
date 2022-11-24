@@ -1,0 +1,83 @@
+//<FORM>
+// Снипет (HTML):
+.form {
+	position: relative;
+	max-width: em(533, 18);
+	padding: em(6, 18);
+	background-color: #fff;
+	border-radius: em(10, 18);
+	display: flex;
+	gap: em(5, 18);
+	@media (max-width: em(430)) {
+		flex-direction: column;
+	}
+	&__row {
+	}
+	&__column {
+	}
+	&__line {
+	}
+	&__input {
+		height: em(62, 18);
+		flex: 1 1 auto;
+		padding: 0 em(20, 18);
+		font-weight: 500;
+		color: #263238;
+		&::placeholder {
+			color: #263238;
+		}
+		&._form-error {
+			color:rgb(235, 56, 56);
+			&::placeholder {
+				color:rgb(235, 56, 56);
+			}
+		} 
+	}
+	&__button {
+	}
+	&__error {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		font-size: rem(18);
+		color: rgb(235, 56, 56);
+		margin: em(10, 18) 0 0 em(26, 18);
+	}
+}
+//</FORM>
+
+// <BUTTONS>
+// Снипет (HTML): btn
+@import "button";
+
+// <INPUTS>
+// Снипет (HTML): inp
+@import "input";
+
+// <CHECK>
+// Снипет (HTML): chk
+// @import "checkbox";
+
+// <RADIO>
+// Снипет (HTML): opt
+// @import "radio";
+
+// <SELECT>
+// Снипет (HTML): sel
+// @import "select";
+
+// <RATING>
+// Снипет (HTML): rating
+// @import "rating";
+
+// <QUANTITY>
+// Снипет (HTML): qa
+// @import "quantity";
+
+// <RANGE>
+// Снипет (HTML):
+// @import "range";
+
+// <CALENDAR>
+// Снипет (HTML):
+// @import "datepicker";

@@ -1,0 +1,65 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.button {
+	display: inline-block;
+	padding: em(21, 18) em(25, 18);
+	background-color: $secondColor;
+	border-radius: em(10, 18);
+	font-weight: 500;
+	line-height: math.div(20, 18);
+	color: $mainColor;
+	text-align: center;
+	transition: all 0.5s ease 0s;
+	cursor: pointer;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #1b8b1b;
+		}
+	}
+	&_header {
+		font-family: 'Lato';
+		line-height: math.div(22, 18);
+		@media (max-width: em(1080, 16)) {
+			padding: em(16, 18) em(15, 18);
+		}
+		@media (max-width:$mobile){
+			font-size: rem(22);
+		}
+	}
+	&_transparent {
+		padding: em(20, 18) em(44, 18);
+		font-family: 'Lato';
+		line-height: math.div(22, 18);
+		background-color: transparent;
+		border: 1px solid $mainColor;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: transparent;
+				border: 1px solid $secondColor;
+				color: $secondColor;
+			}
+		}
+		@media (max-width: em(1080, 16)){
+			padding: em(15, 18) em(34, 18);
+		}
+		@media (max-width:$mobileSmall){
+			padding: em(15, 18) em(20, 18);			  
+		}		
+	}
+	&_list {
+		padding: em(21, 18) em(55, 18);
+		@media (max-width:$mobileSmall) {
+			width: 100%;
+		}
+	}
+	&_reviews {
+		padding: em(21, 18) em(70, 18);
+		@media (max-width:$mobileSmall) {
+			width: 100%;
+		}
+	}
+	&._fw {
+		width: 100%;
+	}
+}

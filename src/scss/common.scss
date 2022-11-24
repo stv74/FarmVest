@@ -1,0 +1,67 @@
+.title {
+    font-weight: 600;
+    font-size: rem(70);
+    line-height: 1;
+    text-align: center;
+    color: #FFFFFF;
+    @include adaptiveValue("font-size", 70, 40);
+    &_s64 {
+        @include adaptiveValue("font-size", 64, 36);
+        text-align: left;
+    }
+    &_s56 {
+        @include adaptiveValue("font-size", 56, 35);
+    }
+    span {
+        color: $secondColor;
+    }
+}
+.text {
+    line-height: math.div(32, 18);
+}
+.image-block {
+    position: relative;
+    align-self: start;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px; 
+    overflow: hidden;   
+    @include adaptiveValue("padding-top", 148, 30);
+    @include adaptiveValue("padding-bottom", 148, 30);
+    @include adaptiveValue("padding-left", 45, 30);
+    @include adaptiveValue("padding-right", 45, 30);
+    &__item {
+        position: relative;
+        text-align: center;
+        z-index: 2;
+        img {
+            max-width: 100%;
+            border-radius: em(20, 18);
+        }
+    }
+    &__circle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include adaptiveValue("width", 585, 350);
+        @include adaptiveValue("height", 585, 350);
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px solid #FFFFFF;
+        }
+        &_1 {
+            &::before {
+                transform: translate(calc(50% - em(22, 18)), -(percent(113, 585)));
+            }
+        }
+        &_2 {
+            &::before {
+                transform: translate(calc(50% - em(16, 18)), -(percent(36, 585)));
+            }
+        }        
+    }    
+}
